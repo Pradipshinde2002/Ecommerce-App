@@ -9,7 +9,6 @@ import productRouter from './routes/productRoute.js'
 import cartRouter from './routes/cartRoute.js'
 import orderRouter from './routes/orderRoute.js'
 
-const allowedOrigins = ['https://ecommerce-admin-five-chi.vercel.app'];
 
 //app config
 const app = express()

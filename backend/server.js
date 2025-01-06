@@ -13,13 +13,7 @@ const app = express()
 const port = process.env.PORT || 4000
 
 // added for when got error of axios error
-app.use(
-  cors({
-    origin: ['https://ecommerce-admin-five-chi.vercel.app'],
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    credentials: true,
-  })
-);
+
 
 connectDB()
 
@@ -27,7 +21,15 @@ connectCloudinary()
 
 //middlewares
 app.use(express.json())
-app.use(cors())   //added corsOptions 
+// app.use(cors())   //added corsOptions 
+
+app.use(
+  cors({
+    origin: ['https://ecommerce-admin-five-chi.vercel.app'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true,
+  })
+);
 
 //api endpoints
 app.use('/api/user',userRouter)

@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext'
 import { use } from 'react'
 import { assets } from '../assets/assets'
-import Relatedproducts from '../components/Relatedproducts'
+// import Relatedproducts from '../components/Relatedproducts'
+import Relatedproducts from '../components/RelatedProducts'
 
 const Product = () => {
   const {productId}=useParams()

@@ -14,7 +14,7 @@ const port = process.env.PORT || 4000
 
 // added for when got error of axios error
 const corsOptions ={                                
-    origin:'https://ecommerce-backend-sable-ten.vercel.app/', 
+    origin:'https://ecommerce-frontend-inky-pi.vercel.app', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }

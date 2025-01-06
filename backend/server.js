@@ -13,11 +13,13 @@ const app = express()
 const port = process.env.PORT || 4000
 
 // added for when got error of axios error
-// const corsOptions ={                                
-//     origin:'https://ecommerce-admin-five-chi.vercel.app', 
-//     credentials:true,            
-//     optionSuccessStatus:200
-// }
+app.use(
+  cors({
+    origin: ['https://ecommerce-admin-five-chi.vercel.app'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true,
+  })
+);
 
 connectDB()
 

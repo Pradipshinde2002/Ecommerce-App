@@ -33,6 +33,12 @@ app.use('/api/product',productRouter)
 app.use('/api/cart',cartRouter)
 app.use('/api/order',orderRouter)
 
+//added
+app.get('/cors', (req, res) => {
+res.set('Access-Control-Allow-Origin', '*');
+res.send({ "msg": "This has CORS enabled 🎈" })
+})
+
 
 app.get('/',(req,res)=>{
     res.send('API WORKING')

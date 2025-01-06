@@ -8,6 +8,6 @@ const router = express.Router();
 
 router.post('/add',authUser, addToCart);
 router.post('/update',authUser, updateCart);
-router.get('/get',authUser, getUserCart);
+router.post('/get',authUser, getUserCart);
 
 export default router;

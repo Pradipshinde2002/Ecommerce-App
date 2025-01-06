@@ -23,10 +23,26 @@ connectCloudinary()
 
 //middlewares
 app.use(express.json())
-app.use(cors())   //added corsOptions 
+// app.use(cors())   //added corsOptions 
+const allowedOrigins = ['http://localhost:4000', 'https://ecommerce-admin-five-chi.vercel.app'];
+const corsOptions = {
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true, // Allow cookies and auth headers
+};
 
 
 //added 
+
+app.use(express.json());
+app.use(cors(corsOptions));
+
 
 //api endpoints
 app.use('/api/user',userRouter)

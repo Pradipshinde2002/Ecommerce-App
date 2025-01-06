@@ -12,13 +12,20 @@ import orderRouter from './routes/orderRoute.js'
 const app = express()
 const port = process.env.PORT || 4000
 
+// added for when got error of axios error
+const corsOptions ={                                
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+
 connectDB()
 
 connectCloudinary()
 
 //middlewares
 app.use(express.json())
-app.use(cors())
+app.use(cors(corsOptions))   //added corsOptions 
 
 //api endpoints
 app.use('/api/user',userRouter)

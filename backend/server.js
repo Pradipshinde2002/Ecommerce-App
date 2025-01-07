@@ -16,24 +16,6 @@ const port = process.env.PORT || 4000;
 connectDB();
 connectCloudinary();
 
-// CORS Configuration
-const corsOptions = {
-    origin: ['https://ecommerce-backend-sable-ten.vercel.app', 'https://ecommerce-admin-five-chi.vercel.app'], // Allowed origins
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-    credentials: true, // Allow cookies and credentials
-};
-
-app.use(cors(corsOptions));
-
-// Handle preflight requests explicitly
-app.options('*', (req, res) => {
-    res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
-    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.sendStatus(200);
-});
-
 // Middleware
 app.use(express.json());
 

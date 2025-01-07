@@ -1,6 +1,10 @@
 import jwt from 'jsonwebtoken'
 
 const adminAuth=async(req,res,next)=>{
+
+    if (req.method === 'OPTIONS') {
+        return next(); // Skip authentication for preflight requests
+    }
 try{
     const {token}=req.headers
 

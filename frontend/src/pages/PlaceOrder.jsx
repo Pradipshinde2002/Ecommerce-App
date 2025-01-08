@@ -127,7 +127,7 @@ const PlaceOrder = () => {
       {/* ---------left side----------------- */}
       <div className='flex flex-col gap-4 w-full sm:max-w-[480px]'>
         <div className='text-xl sm:text-2xl my-3'>
-          <Title text1={'DELIVERY'} text2={'INFORMATION'}/>
+          <Title text1={'DELIVERY '} text2={'INFORMATION'}/>
 
         </div>
 
@@ -162,7 +162,7 @@ const PlaceOrder = () => {
       </div>
 
       <div className='mt-12'>
-        <Title text1={'PAYMENT'} text2={'METHOD'} />
+        <Title text1={'PAYMENT '} text2={'METHOD'} />
 
         {/* -------- Payment method Selection------------- */}
         
